@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <!--springboot的父依赖-->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.3.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <!--自己的依赖坐标-->
+    <groupId>com.yb</groupId>
+    <artifactId>activiti</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <!--名称和描述-->
+    <name>activiti</name>
+    <description>Demo project for Spring Boot</description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencies>
+        <!--springboot相关的组件-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!--springboot的单元测试依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!--工作流activiti整合spring需要的依赖-->
+        <dependency>
+            <groupId>org.activiti</groupId>
+            <artifactId>activiti-spring</artifactId>
+            <version>7-201802-EA</version>
+        </dependency>
+        <!--工作流activiti的相关依赖-->
+        <!--<dependency>-->
+            <!--<groupId>org.activiti</groupId>-->
+            <!--<artifactId>activiti-engine</artifactId>-->
+            <!--<version>7-201802-EA</version>-->
+        <!--</dependency>-->
+        <!--mysql数据库驱动-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.47</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <!--打包的jar包名-->
+        <finalName>my-activiti-demo</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
