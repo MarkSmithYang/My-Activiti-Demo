@@ -22,6 +22,24 @@ public class ActivitiApplicationTests {
     @Autowired
     private ProcessEngine processEngine;
 
+    @Test
+    public void deployConfig() {
+        //取得ProcessEngineConfiguration对象
+        ProcessEngineConfiguration engineConfiguration = ProcessEngineConfiguration.createStandaloneProcessEngineConfiguration();
+        //设置数据库连接属性------(最好不要沿用业务的那个数据库,会很混乱的,建议专门创建一个库放工作流的表)
+        engineConfiguration.setJdbcDriver("com.mysql.jdbc.Driver");
+        engineConfiguration.setJdbcUrl("jdbc:mysql://localhost:3306/activitiDB?createDatabaseIfNotExist=true" +
+                "&useUnicode=true&characterEncoding=utf8");
+        engineConfiguration.setJdbcUsername("root");
+        engineConfiguration.setJdbcPassword("root");
+        // 设置创建表的策略 （当没有表时，自动创建表）
+        engineConfiguration.setDatabaseSchemaUpdate("true");
+        //通过ProcessEngineConfiguration对象创建 ProcessEngine 对象
+        ProcessEngine processEngine = engineConfiguration.buildProcessEngine();
+        System.out.println("流程引擎创建成功!");
+    }
+
+
     //一般的流程步骤:
     //1.流程部署
     //2.启动流程实例
@@ -62,6 +80,7 @@ public class ActivitiApplicationTests {
         System.err.println("流程实例id:" + pi.getId());
         //输出流程定义的id
         System.err.println("流程定义id:" + pi.getProcessDefinitionId());
+
     }
 
     /**

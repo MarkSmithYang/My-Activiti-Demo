@@ -38,7 +38,7 @@ public class ActivitiConfiguration {
      * 所以实例化StandaloneProcessEngineConfiguration还是SpringProcessEngineConfiguration效果一样,后者功能更多
      * SpringProcessEngineConfiguration extends ProcessEngineConfigurationImpl implements ApplicationContextAware
      * ProcessEngineConfigurationImpl extends ProcessEngineConfiguration
-     *
+     *------------------------------>最好就是为这些表单独建个库来存储,最好不要沿用业务
      * @return
      */
     @Bean

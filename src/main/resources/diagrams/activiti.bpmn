@@ -3,8 +3,8 @@
   <process id="myProcess_1" isClosed="false" isExecutable="true" processType="None">
     <startEvent id="_2" name="StartEvent"/>
     <userTask activiti:assignee="小明" activiti:exclusive="true" id="_3" name="请假"/>
-    <userTask activiti:assignee="班主任" activiti:exclusive="true" id="_4" name="审批一"/>
-    <userTask activiti:assignee="任课老师" activiti:exclusive="true" id="_6" name="审批二"/>
+    <userTask activiti:assignee="班主�?" activiti:exclusive="true" id="_4" name="审批�?"/>
+    <userTask activiti:assignee="任课老师" activiti:exclusive="true" id="_6" name="审批�?"/>
     <endEvent id="_7" name="EndEvent"/>
     <sequenceFlow id="_8" sourceRef="_2" targetRef="_3"/>
     <sequenceFlow id="_9" sourceRef="_3" targetRef="_4"/>
